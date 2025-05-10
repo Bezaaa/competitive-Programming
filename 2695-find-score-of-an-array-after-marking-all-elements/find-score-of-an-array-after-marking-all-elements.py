@@ -5,7 +5,7 @@ class Solution:
 
         
         indexed_nums = sorted(enumerate(nums), key=lambda x: x[1])
-        print(indexed_nums)
+        
 
         for idx, value in indexed_nums:
             if not marked[idx]:
