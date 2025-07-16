@@ -4,11 +4,18 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        if not nums:
+         return -1  
+
+        min_num = nums[0]
         max_diff = -1
-        for i in range(len(nums)-1):
-            for j in range(i+1 ,len(nums)):
-                if nums[i] < nums[j] :
-                    max_diff = max(nums[j]-nums[i] , max_diff)
+
+        for num in nums[1:]:
+            if num > min_num:
+                max_diff = max(max_diff, num - min_num)
+            else:
+                min_num = num
+
         return max_diff
 
 
