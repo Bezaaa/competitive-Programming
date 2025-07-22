@@ -5,7 +5,7 @@ class Solution(object):
         :type nums2: List[List[int]]
         :rtype: List[List[int]]
         """
-        from collections import defaultdict
+       
 
         hash_map = defaultdict(int)
 
