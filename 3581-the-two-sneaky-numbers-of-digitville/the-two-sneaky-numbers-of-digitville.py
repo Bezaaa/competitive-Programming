@@ -4,11 +4,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        res = []
-        hash_map = {}
-        for i in nums:
-            if i in hash_map:
-                res.append(i)
-            hash_map[i] = 1
-        return res
+        freq = Counter(nums)
+        return [num for num, count in freq.items() if count > 1]
+
         
