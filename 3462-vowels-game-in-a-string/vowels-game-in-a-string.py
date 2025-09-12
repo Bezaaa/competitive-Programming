@@ -15,13 +15,8 @@ class Solution(object):
         only if there is no vowel
         """
         vowels = ['a','e','i','o','u']
-        count_vowels = 0
         for i in s:
             if i.lower() in vowels:
-                count_vowels+=1
-        print(count_vowels)
-        if  count_vowels == 0:
-            return False
-        return True
-     
+                return True
+        return False
         
