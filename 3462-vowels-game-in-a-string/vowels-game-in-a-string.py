@@ -11,7 +11,7 @@ class Solution(object):
         for alice to move optimally she can take the longest substring wth odd number of vowels
         we start with how many vowels are present in the whole string if even we'll find the last vowel index from the last 
         when will alice lose or Draw 
-        only if the vowels present are 2 
+         
         only if there is no vowel
         """
         vowels = ['a','e','i','o','u']
