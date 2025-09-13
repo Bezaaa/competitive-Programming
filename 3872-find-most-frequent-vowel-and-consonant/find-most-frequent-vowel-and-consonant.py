@@ -6,7 +6,7 @@ class Solution(object):
             hash_v[i] = hash_v.get(i,0) + 1
       
         sorted_hash = sorted(hash_v.items(), key=lambda x: x[1])
-        print(sorted_hash)
+        
         max_vowel = 0
         max_con = 0
         for i in sorted_hash:
