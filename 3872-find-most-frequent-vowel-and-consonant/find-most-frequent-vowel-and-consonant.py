@@ -1,27 +1,29 @@
 class Solution(object):
     def maxFreqSum(self, s):
-        """
-    lower case English letters
-    find the vowel with maximum frequency
-    find the consonant with maximum frequency
-    return the sum 
-        """
         vowels = ['a','e','i','o','u']
-        vowel_hash_map  = {}
-        consonant_hash_map = {}
+        hash_v = {}
         for i in s:
-            if i in vowels:
-                vowel_hash_map[i] = vowel_hash_map.get(i,0) + 1
+            hash_v[i] = hash_v.get(i,0) + 1
+      
+        sorted_hash = sorted(hash_v.items(), key=lambda x: x[1])
+        print(sorted_hash)
+        max_vowel = 0
+        max_con = 0
+        for i in sorted_hash:
+            key , val = i
+            if key in vowels:
+                
+                max_vowel = max(val , max_vowel)
+                
             else:
-                consonant_hash_map[i] = consonant_hash_map.get(i,0) + 1
-        if not consonant_hash_map and not vowel_hash_map:
-            return 0
-        if not consonant_hash_map :
-            return max(vowel_hash_map.values())
-        if not vowel_hash_map : 
-            return max(consonant_hash_map.values())
-        freq_vowel = max(vowel_hash_map.values())
-        freq_cons = max(consonant_hash_map.values())
-        return freq_cons + freq_vowel
+               
+                max_con = max(max_con , val)
+        return max_vowel + max_con
+                
+             
+
+
+
+        
 
         
