@@ -2,5 +2,4 @@ class Solution(object):
     def maxFrequencyElements(self, nums):
         freq = Counter(nums)
         max_freq = max(freq.values())
-        elements = [count for num,count in freq.items() if count == max_freq]
-        return sum(elements)
+        return sum(count for count in freq.values() if count == max_freq)
