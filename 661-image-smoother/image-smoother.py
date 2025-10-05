@@ -9,7 +9,7 @@ class Solution(object):
         rows  = len(img)
         cols = len(img[0])
         new_matrix = [[0] * cols for _ in range(rows)]
-        print(new_matrix)
+        
         for row in range(rows):
             for col in range(cols):
                 total = img[row][col]
