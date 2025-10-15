@@ -1,0 +1,24 @@
+class Solution:
+    def maxIncreasingSubarrays(self, nums: List[int]) -> int:
+        n = len(nums)
+        if n < 2:
+            return 0
+
+       
+        inc_left = [1] * n
+        for i in range(1, n):
+            if nums[i] > nums[i - 1]:
+                inc_left[i] = inc_left[i - 1] + 1
+
+        inc_right = [1] * n
+        for i in range(n - 2, -1, -1):
+            if nums[i] < nums[i + 1]:
+                inc_right[i] = inc_right[i + 1] + 1
+
+        max_k = 0
+        for i in range(n - 1):
+          
+            k = min(inc_left[i], inc_right[i + 1])
+            max_k = max(max_k, k)
+
+        return max_k
