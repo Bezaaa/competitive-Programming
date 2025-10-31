@@ -1,10 +1,8 @@
-class Solution(object):
-    def getSneakyNumbers(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
-        freq = Counter(nums)
-        return [num for num, count in freq.items() if count > 1]
-
-        
+class Solution:
+    def getSneakyNumbers(self, nums: List[int]) -> List[int]:
+        count = Counter(nums)
+        res = set()
+        for num in nums:
+            if count[num] == 2:
+                res.add(num)
+        return list(res)
