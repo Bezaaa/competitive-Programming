@@ -26,7 +26,7 @@ class Solution(object):
             for c in range (len(grid[0])):
                 if grid[r][c] == '1':
                     total_islands+=1
-                dfs(r,c)
+                    dfs(r,c)
         return total_islands
 
         
