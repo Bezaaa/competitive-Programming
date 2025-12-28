@@ -5,9 +5,9 @@ class Solution(object):
         :rtype: int
         """
         max_count  = 0
-        total_count =0
+       
         if not grid:
-            return total_count
+            return 0
         rows = len(grid)
         cols = len(grid[0])
         def dfs (r , c):
