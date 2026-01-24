@@ -1,9 +1,14 @@
 class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
-        unique = set(nums)
         res = []
-        for i in range(1 , len(nums)+1):
-            if i not in unique:
-                res.append(i)
+        for i in range(len(nums)):
+            idx = abs(nums[i]) - 1
+            if nums[idx] > 0:
+                nums[idx] = -nums[idx]
+
+       
+        for i in range(len(nums)):
+            if nums[i] > 0:
+                res.append(i + 1)
+
         return res
-        
