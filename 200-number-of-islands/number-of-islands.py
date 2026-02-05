@@ -6,27 +6,25 @@ class Solution(object):
         """
         total_islands = 0
         if not grid:
-            return total_islands
-        
-
-        def dfs (r , c):
-            # first mark the cell and neightbours as visited 
+            return 0
+        def dfs(r , c):
+            
             if (r < 0) or (r >= len(grid)) or (c < 0) or (c >= len(grid[0])) or (grid[r][c] == '0'):
                 return
-
-            # 2. MARK VISITED: Sink the ship.
-            grid[r][c] = '0'
-
-            # 3. RECURSE: Call myself on neighbors
-            dfs(r + 1, c) # Down
-            dfs(r - 1, c) # Up
-            dfs(r, c + 1) # Right
-            dfs(r, c - 1) #
-        for r in range(len(grid)):
-            for c in range (len(grid[0])):
-                if grid[r][c] == '1':
+             
+            if grid[r][c] == '1':
+                grid[r][c] = '0'
+            dfs(r ,c+1)
+            dfs(r, c-1)
+            dfs(r+1 , c)
+            dfs(r-1 , c)
+            return grid
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j] == '1':
                     total_islands+=1
-                    dfs(r,c)
+                    dfs(i ,j)
         return total_islands
 
+       
         
