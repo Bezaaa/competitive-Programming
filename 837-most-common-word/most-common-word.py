@@ -3,7 +3,7 @@ class Solution:
         hash_map = {}
         words = re.sub(r"[^\w\s]", " ", paragraph).split()    
  
-        print(words)
+        
 
         for word in words:
             word = word.lower()
