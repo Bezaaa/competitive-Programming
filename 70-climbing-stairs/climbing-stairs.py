@@ -1,18 +1,16 @@
 class Solution(object):
-    def __init__(self):
-        self.memo = {}
+   
+        
    
     def climbStairs(self, n):
-            if n in self.memo:
-                return self.memo[n]
+        one = 1
+        two = 1
+        for i in range(1 ,n):
+            temp = one 
+            one = one + two 
+            two = temp 
+        return one
 
-
-            if n <=3:
-                return n
-            
-           
-            self.memo[n] = self.climbStairs(n-1) + self.climbStairs(n-2)
-            return self.memo[n]
 
             
         
