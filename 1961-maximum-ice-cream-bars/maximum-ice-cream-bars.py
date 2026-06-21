@@ -7,7 +7,7 @@ class Solution:
            
             curr_sum +=costs[i]
             if curr_sum >coins:
-                return max_icecream
+                break
             else:
                 max_icecream+=1
         return max_icecream
